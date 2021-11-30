@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import formas from "./form.json";
+import CheckFields from "./Components/CheckFields";
+import SelectFields from "./Components/SelectFields";
 
 function App() {
+  const [inputPassword, setInputPassword] = useState(false);
+  const [inputFirstName, setInputFirstName] = useState(false);
+  const [inputLastName, setInputLastName] = useState(false);
+  const [select, setSelect] = useState(false);
+  const onInputChange = (e) => {
+    if (e.target.name === "First Name") {
+      setInputFirstName(e.target.checked);
+    } else if (e.target.name === "Last Name") {
+      setInputLastName(e.target.checked);
+    } else if (e.target.name === "Password") {
+      setInputPassword(e.target.checked);
+    } else if (e.target.name === "Select") {
+      setSelect(e.target.checked);
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SelectFields Formas={formas} onChange={onInputChange} />
+      <CheckFields
+        Formas={formas}
+        FirstName={inputFirstName}
+        LastName={inputLastName}
+        Password={inputPassword}
+        Select={select}
+      />
     </div>
   );
 }

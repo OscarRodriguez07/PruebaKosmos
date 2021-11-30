@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "component": "text",
+    "label": "First Name",
+    "type": "text"
+  },
+  {
+    "id": 2,
+    "component": "text",
+    "label": "Last Name",
+    "type": "text"
+  },
+  {
+    "id": 3,
+    "component": "text",
+    "label": "Password",
+    "type": "password"
+  },
+  {
+    "id": 4,
+    "label": "Select",
+    "options": [
+      { "value": "Volvo" },
+      { "value": "VW" },
+      { "value": "Mercedes Benz" },
+      { "value": "BMW" }
+    ]
+  }
+]
